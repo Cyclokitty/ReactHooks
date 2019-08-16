@@ -1,36 +1,58 @@
-import React, { Component } from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import React from 'react';
+import { View, StyleSheet, Text, Button, TouchableOpacity } from 'react-native';
 
-export default class HomeScreen extends Component {
-    render() {
+const HomeScreen = ({ navigation }) => {
         return (
             <View style={styles.container}>
-                <Text style={styles.title}>
-                    Feed Freddie the Cat!!
-                </Text>
-                <Text style={styles.subTitle}>
-                    LOTS!! NOW!!
-                </Text>
+                <Text style={styles.title}>Hi There!</Text>
+                <TouchableOpacity
+                    onPress={() => navigation.navigate('Components')}
+                    style={styles.button}
+                >
+                    <Text style={styles.btnText}>Go to Components Demo</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => navigation.navigate('List')}
+                    style={styles.button}
+                >
+                    <Text style={styles.btnText}>Go to List Demo</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => navigation.navigate('Image')}
+                    style={styles.button}
+                >
+                    <Text style={styles.btnText}>Go to Image Demo</Text>
+                </TouchableOpacity>
             </View>
         )
     }
-}
+
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'stretch',
         backgroundColor: '#EA7201',
+        padding: 10,
     },
     title: {
-        color: '#0179EA',
-        fontSize: 16,
-        fontWeight: 'bold'
-    },
-    subTitle: {
-        color: '#0179EA',
+        color: '#fff',
         fontSize: 24,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        alignSelf: 'center'
+    },
+    button: {
+        backgroundColor: '#0179EA',
+        padding: 5,
+        margin: 10
+    },
+    btnText: {
+        color: '#fff',
+        fontSize: 20,
+        alignSelf: 'center'
     }
-})
+});
+
+export default HomeScreen;

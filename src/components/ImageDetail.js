@@ -17,6 +17,8 @@ const ImageDetail = props => {
 const styles = StyleSheet.create({
     imageStyle: {
         margin: 10,
+        borderColor: '#333',
+        borderWidth: 1,
     },
     title: {
         fontSize: 20,

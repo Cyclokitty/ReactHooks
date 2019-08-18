@@ -35,6 +35,12 @@ const HomeScreen = ({ navigation }) => {
                 >
                     <Text style={styles.btnText}>Go to Colour Demo</Text>
                 </TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => navigation.navigate('Square')}
+                    style={styles.button}
+                >
+                    <Text style={styles.btnText}>Go to Square Demo</Text>
+                </TouchableOpacity>
             </View>
         )
     }
@@ -58,11 +64,11 @@ const styles = StyleSheet.create({
     button: {
         backgroundColor: '#0179EA',
         padding: 5,
-        margin: 10
+        margin: 5
     },
     btnText: {
         color: '#fff',
-        fontSize: 20,
+        fontSize: 14,
         alignSelf: 'center'
     }
 });

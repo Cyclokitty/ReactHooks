@@ -10,14 +10,12 @@ const ColourScreen = () => {
         const green = getRandom();
         const blue = getRandom();
         const hexCode = rgbToHex(red, green, blue);
-        const rgb = {rgbName: 'rgb(' + red + ',' + green + ',' + blue + ')', hexName: hexCode};
-        console.log(rgb);
-        console.log({swatch});
+        const rgb = {rgbName: 'rgb(' + red + ', ' + green + ', ' + blue + ')', hexName: hexCode};
         setSwatch([...swatch, rgb]);
     }
 
     const getRandom = () => {
-        return Math.floor(Math.random() * (255 - 0) + 0);
+        return Math.floor(Math.random() * 256);
     }
 
     const colourToHex = (colour) => {

@@ -16,7 +16,7 @@ const CounterScreen = () => {
             title='Decrease'
             onPress={() => {setCounter(counter - 1);}}
             />           
-            <Text>{counter}</Text>
+            <Text style={styles.counterText}>{counter}</Text>
         </View>
     )
 }
@@ -24,6 +24,9 @@ const CounterScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
         backgroundColor: '#FFD700',
         padding: 10,
     },
@@ -31,6 +34,10 @@ const styles = StyleSheet.create({
         color: '#333',
         fontWeight: 'bold',
         fontSize: 24,
+    },
+    counterText: {
+        color: '#d700ff',
+        fontSize: 30,
     }
 });
 

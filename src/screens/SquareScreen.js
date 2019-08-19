@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import ColourCounter from '../components/ColourCounter';
 
 const SquareScreen = () => {
@@ -7,27 +7,52 @@ const SquareScreen = () => {
     const [green, setGreen] = useState(0);
     const [blue, setBlue] = useState(0);
 
-    const onIncrease = (col) => {
+    const onIncrease = (col) => {       
         switch(col) {
             case 'red':
-                return setRed(red + 1);
+                if (red + 1 > 255) {
+                    return;
+                } else {
+                    return setRed(red + 1);
+                }               
             case 'green':
-                return setGreen(green + 1);
+                    if (green + 1 > 255) {
+                        return;
+                    } else {
+                        return setGreen(green + 1);
+                    }
             case 'blue':
-                return setBlue(blue + 1);
+                    if (blue + 1 > 255) {
+                        return;
+                    } else {
+                        return setBlue(blue + 1);
+                    }
             default: 
                 console.log(`uh, oh problem with ${col} increase function`);
         }
     }; 
 
     const onDecrease = (col) => {
+        
         switch(col) {
             case 'red':
-                return setRed(red - 1);
+                if (red - 1 < 0) {
+                    return;
+                } else {
+                    return setRed(red - 1);
+                }               
             case 'green':
-                return setGreen(green - 1);
+                    if (green - 1 < 0) {
+                        return;
+                    } else {
+                        return setGreen(green - 1);
+                    }
             case 'blue':
-                return setBlue(blue - 1);
+                    if (blue - 1 < 0) {
+                        return;
+                    } else {
+                        return setBlue(blue - 1);
+                    }
             default: 
                 console.log(`uh, oh problem with ${col} decrease function`);
         }
@@ -51,7 +76,8 @@ const SquareScreen = () => {
                 onDecrease={() => onDecrease('blue')}
                 colour='blue' 
             />
-            
+            <View style={{ height: 150, width: 150, alignSelf: 'center', backgroundColor: `rgb(${red}, ${green}, ${blue})`, borderColor: '#fff', borderWidth: 1 }}/>
+            <Text style={styles.rgbText}>rgb({red}, {green}, {blue})</Text>
         </View>
     )
 }
@@ -59,9 +85,9 @@ const SquareScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // flexDirection: 'column',
-        // justifyContent: 'center',
-        // alignItems: 'stretch',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'stretch',
         backgroundColor: '#333',
         padding: 10,
     },
@@ -71,6 +97,11 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         alignSelf: 'center'
     },
+    rgbText: {
+        color: '#fff',
+        fontSize: 14,
+        alignSelf: 'center',
+    }
 });
 
 export default SquareScreen;

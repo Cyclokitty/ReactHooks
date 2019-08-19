@@ -17,14 +17,15 @@ const ColourCounter = ({ colour, onIncrease, onDecrease }) => {
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: '#f630b7',
-        padding: 10,
+        backgroundColor: '#fff',
+        padding: 5,
         margin: 5
     },
     btnText: {
-        color: '#fff',
+        color: '#f630b7',
         fontSize: 14,
-        alignSelf: 'center'
+        alignSelf: 'center',
+        fontWeight: 'bold',
     }
 });
 

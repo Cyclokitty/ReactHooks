@@ -67,10 +67,12 @@ const styles = StyleSheet.create({
         backgroundColor: '#264c00',
         padding: 10,
         margin: 10,
+        alignSelf: 'stretch',
     },
     counterBtnText: {
         color: '#fff',
         fontSize: 16,
+        alignSelf: 'center',
     },
 });
 

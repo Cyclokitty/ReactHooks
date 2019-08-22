@@ -53,6 +53,12 @@ const HomeScreen = ({ navigation }) => {
                 >
                     <Text style={styles.btnText}>Go to Counter Reducer Demo</Text>
                 </TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => navigation.navigate('Form')}
+                    style={styles.button}
+                >
+                    <Text style={styles.btnText}>Go to Form Demo</Text>
+                </TouchableOpacity>
             </View>
         )
     }

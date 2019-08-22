@@ -13,6 +13,7 @@ import ColourScreen from './src/screens/ColourScreen';
 import SquareScreen from './src/screens/SquareScreen';
 import ColourReducer from './src/screens/ColourReducer';
 import CounterReducer from './src/screens/CounterReducer';
+import FormScreen from './src/screens/FormScreen';
 
 const RootStack = createStackNavigator(
   {
@@ -24,7 +25,8 @@ const RootStack = createStackNavigator(
     Colour: ColourScreen,
     Square: SquareScreen,
     ColourReducer: ColourReducer,
-    CounterReducer: CounterReducer, 
+    CounterReducer: CounterReducer,
+    Form: FormScreen, 
   },
   {
     initialRouteName: 'Home',

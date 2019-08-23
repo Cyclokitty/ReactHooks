@@ -1,10 +1,19 @@
-import React from 'react';
-import { StyleSheet, Text, TexInput, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
 
 const FormScreen = () => {
+    const [name, setName] = useState('');
+
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Form Screen</Text>
+            <Text style={styles.inputTitle}>Your name is: {name}</Text>
+            <TextInput
+                style={styles.input}
+                onChangeText={ ({name}) => setName(name) }
+                value={name}
+            />
+            
         </View>
     )
 };
@@ -21,6 +30,19 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         fontSize: 24,
     },
+    inputTitle: {
+        color: '#fff',
+        fontSize: 20,
+    },
+    input: {
+        margin: 15,
+        backgroundColor: '#fff',
+        color: '#333', 
+        borderColor: '#333',
+        borderWidth: 1,
+        alignSelf: 'stretch',
+    },
+    
 });
 
 export default FormScreen;
